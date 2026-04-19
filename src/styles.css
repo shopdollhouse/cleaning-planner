@@ -295,10 +295,6 @@
 .checkbox-mint:checked      { accent-color: #4db6ac; }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply font-sans antialiased text-foreground;
     background: var(--gradient-bg);
