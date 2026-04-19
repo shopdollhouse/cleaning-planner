@@ -49,6 +49,7 @@ export interface SystemActions {
   setDay: AppApi['setDay'];
   toggleSound: AppApi['toggleSound'];
   toggleShowTips: AppApi['toggleShowTips'];
+  toggleUseEmoji: AppApi['toggleUseEmoji'];
   setUserName: AppApi['setUserName'];
   pickRandomDay: AppApi['pickRandomDay'];
   setUiMode: AppApi['setUiMode'];
@@ -76,8 +77,8 @@ export function useAppActions(app: AppApi): GroupedActions {
       challenge: { toggleChallengeDay: app.toggleChallengeDay, toggleSpecialtyItem: app.toggleSpecialtyItem, addCustomSpecialtyItem: app.addCustomSpecialtyItem, deleteCustomSpecialtyItem: app.deleteCustomSpecialtyItem },
       family: { setFamilySize: app.setFamilySize, toggleFamilyTask: app.toggleFamilyTask, addFamilyTask: app.addFamilyTask, deleteFamilyTask: app.deleteFamilyTask, updateFamilyMember: app.updateFamilyMember, toggleActiveMember: app.toggleActiveMember, swapTasks: app.swapTasks, issueVoucher: app.issueVoucher, redeemVoucher: app.redeemVoucher, deleteVoucher: app.deleteVoucher },
       notes: { updateNote: app.updateNote, addBrainDump: app.addBrainDump, deleteBrainDump: app.deleteBrainDump, clearBrainDump: app.clearBrainDump },
-      system: { setDay: app.setDay, toggleSound: app.toggleSound, toggleShowTips: app.toggleShowTips, setUserName: app.setUserName, pickRandomDay: app.pickRandomDay, setUiMode: app.setUiMode, pickQuickStartTask: app.pickQuickStartTask, clearQuickStartTask: app.clearQuickStartTask, backup: app.backup, restore: app.restore, factoryReset: app.factoryReset },
+      system: { setDay: app.setDay, toggleSound: app.toggleSound, toggleShowTips: app.toggleShowTips, toggleUseEmoji: app.toggleUseEmoji, setUserName: app.setUserName, pickRandomDay: app.pickRandomDay, setUiMode: app.setUiMode, pickQuickStartTask: app.pickQuickStartTask, clearQuickStartTask: app.clearQuickStartTask, backup: app.backup, restore: app.restore, factoryReset: app.factoryReset },
     }),
-    [app.toggleDailyTask, app.addDailyTask, app.deleteDailyTask, app.editDailyTask, app.toggleDeepTask, app.addDeepTask, app.deleteDeepTask, app.resetDeepRoom, app.completeMaintenanceRoom, app.toggleChallengeDay, app.toggleSpecialtyItem, app.addCustomSpecialtyItem, app.deleteCustomSpecialtyItem, app.setFamilySize, app.toggleFamilyTask, app.addFamilyTask, app.deleteFamilyTask, app.updateFamilyMember, app.toggleActiveMember, app.swapTasks, app.issueVoucher, app.redeemVoucher, app.deleteVoucher, app.updateNote, app.addBrainDump, app.deleteBrainDump, app.clearBrainDump, app.setDay, app.toggleSound, app.toggleShowTips, app.setUserName, app.pickRandomDay, app.setUiMode, app.pickQuickStartTask, app.clearQuickStartTask, app.backup, app.restore, app.factoryReset],
+    [app.toggleDailyTask, app.addDailyTask, app.deleteDailyTask, app.editDailyTask, app.toggleDeepTask, app.addDeepTask, app.deleteDeepTask, app.resetDeepRoom, app.completeMaintenanceRoom, app.toggleChallengeDay, app.toggleSpecialtyItem, app.addCustomSpecialtyItem, app.deleteCustomSpecialtyItem, app.setFamilySize, app.toggleFamilyTask, app.addFamilyTask, app.deleteFamilyTask, app.updateFamilyMember, app.toggleActiveMember, app.swapTasks, app.issueVoucher, app.redeemVoucher, app.deleteVoucher, app.updateNote, app.addBrainDump, app.deleteBrainDump, app.clearBrainDump, app.setDay, app.toggleSound, app.toggleShowTips, app.toggleUseEmoji, app.setUserName, app.pickRandomDay, app.setUiMode, app.pickQuickStartTask, app.clearQuickStartTask, app.backup, app.restore, app.factoryReset],
   );
 }
