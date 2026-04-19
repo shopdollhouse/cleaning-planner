@@ -1,35 +1,19 @@
-import type { Theme } from '@/hooks/useAppState';
+// Dark mode has been removed — the app is locked to light mode only.
+// These helpers are kept as no-op stubs so any older imports keep working.
 
-export function getEffectiveTheme(theme: Theme): 'light' | 'dark' {
-  if (theme === 'auto') {
-    if (typeof window === 'undefined') return 'light';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-  return theme;
+export type Theme = 'light';
+
+export function getEffectiveTheme(_theme?: Theme): 'light' {
+  return 'light';
 }
 
-export function applyTheme(theme: Theme) {
-  const effective = getEffectiveTheme(theme);
+export function applyTheme(_theme?: Theme) {
   if (typeof window === 'undefined') return;
-
   const root = document.documentElement;
-  if (effective === 'dark') {
-    root.classList.add('dark');
-    root.style.colorScheme = 'dark';
-  } else {
-    root.classList.remove('dark');
-    root.style.colorScheme = 'light';
-  }
+  root.classList.remove('dark');
+  root.style.colorScheme = 'light';
 }
 
-export function setupThemeListener(onThemeChange: (theme: 'light' | 'dark') => void) {
-  if (typeof window === 'undefined') return;
-
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  const handler = (e: MediaQueryListEvent) => {
-    onThemeChange(e.matches ? 'dark' : 'light');
-  };
-
-  mediaQuery.addEventListener('change', handler);
-  return () => mediaQuery.removeEventListener('change', handler);
+export function setupThemeListener(_onThemeChange: (theme: 'light') => void) {
+  return () => {};
 }
