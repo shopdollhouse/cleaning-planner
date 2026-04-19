@@ -36,7 +36,8 @@ export function fireOptimizedConfetti(options: OptimizedConfettiOptions = {}) {
   }
 
   // Reduce particle count on low-end devices
-  const isLowEnd = navigator.deviceMemory ? navigator.deviceMemory < 4 : false;
+  const deviceMemory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
+  const isLowEnd = deviceMemory ? deviceMemory < 4 : false;
   const particleCount = isLowEnd ? 50 : (options.particleCount || 100);
 
   try {

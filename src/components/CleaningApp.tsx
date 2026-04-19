@@ -357,7 +357,6 @@ export default function CleaningApp({ activeView, onChangeView }: CleaningAppPro
                   onReset={actions.system.factoryReset}
                   onToggleSound={actions.system.toggleSound}
                   onSetDay={actions.system.setDay}
-                  onSetTheme={setTheme}
                 />
                 <BrandFooter />
               </ViewSection>

@@ -355,7 +355,7 @@ function normalizeImportedState(parsed: unknown, today: string): { state: AppSta
           dailyTasksOverrides: partial.dailyTasksOverrides || {},
           // Ensure taskTemplates exists for backward compatibility
           taskTemplates: Array.isArray(partial.taskTemplates) ? partial.taskTemplates : [],
-        };
+        } as AppState;
         return { state: salvaged, error: 'Some data was invalid and reset to defaults' };
       }
       return { state: defaults, error: 'Invalid backup format' };
@@ -709,8 +709,8 @@ export function useAppState() {
     });
   }, []);
 
-  const addDeepTask = useCallback((roomId: string, label: string) => {
-    const id = `dc-${++deepTaskIdCounter}`;
+  const addDeepTask = useCallback((roomId: string, _label: string) => {
+    const id = generateSecureId('dc');
     setState((s) => ({ ...s, deepCleanTasks: { ...s.deepCleanTasks, [roomId]: { ...s.deepCleanTasks[roomId], [id]: false } } }));
     return id;
   }, []);
