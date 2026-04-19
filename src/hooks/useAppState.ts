@@ -369,6 +369,10 @@ function normalizeImportedState(parsed: unknown, today: string): { state: AppSta
 }
 
 function loadState(today: string): AppState {
+  // Guard against SSR — localStorage doesn't exist on the server.
+  if (typeof window === 'undefined') {
+    return buildDefaultState(today);
+  }
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
