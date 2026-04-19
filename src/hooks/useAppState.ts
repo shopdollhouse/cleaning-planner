@@ -362,7 +362,7 @@ function normalizeImportedState(parsed: unknown, today: string): { state: AppSta
     }
 
     const sanitized = sanitizeDates(candidate);
-    return { state: { ...sanitized, day: today, familyMembers: migrateAvatarIds(candidate.familyMembers) } };
+    return { state: { ...defaults, ...sanitized, day: today, familyMembers: migrateAvatarIds(candidate.familyMembers) } as AppState };
   } catch (e) {
     return { state: defaults, error: `Import error: ${e instanceof Error ? e.message : 'Unknown error'}` };
   }

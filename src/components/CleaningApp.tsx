@@ -353,6 +353,7 @@ export default function CleaningApp({ activeView, onChangeView }: CleaningAppPro
                   state={state}
                   onSetUserName={actions.system.setUserName}
                   onToggleTips={actions.system.toggleShowTips}
+                  onToggleUseEmoji={actions.system.toggleUseEmoji}
                   onRestore={actions.system.restore}
                   onReset={actions.system.factoryReset}
                   onToggleSound={actions.system.toggleSound}
