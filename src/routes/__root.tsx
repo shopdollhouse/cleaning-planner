@@ -38,6 +38,8 @@ export const Route = createRootRoute({
       { property: "og:image", content: "/opengraph.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "/opengraph.jpg" },
+      { name: "twitter:title", content: "Dollhouse Studio — ADHD Cleaning Planner" },
+      { name: "twitter:description", content: "A gentle, ADHD-friendly cleaning planner that breaks chores into doable steps." },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
